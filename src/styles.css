@@ -20,6 +20,7 @@ header {
   font-size: 23px;
   font-weight: 500;
   font-family: "Bitter", serif;
+  z-index: 2;
 }
 
 .news-section {
@@ -27,4 +28,12 @@ header {
   width: 100%;
   height: 100vh;
   background-color: azure;
+  position: absolute;
+}
+
+.filters {
+  width: 200px;
+  height: 100%;
+  background-color: #aaa;
+  position: fixed;
 }
