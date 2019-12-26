@@ -10,34 +10,43 @@
       <header>News app</header>
       <div class="news-section">
         <div class="filters">
-          <label for="search-by-keyword">Add keyword to search</label>
-          <input
-            type="text"
-            placeholder="enter keyword to search"
-            id="search-by-keyword"
-          /><br /><br />
-          <label for="select-country">Choose a Country:</label>
-          <select name="pets" id="select-country">
-            <option value="">--Choose country--</option>
-            <option value="ar">Argentina</option>
-            <option value="au">Argentina</option>
-            <option value="at">Austria</option>
-            <option value="be">Belgium</option>
-            <option value="br">Brazil</option>
-            <option value="bg">Bulgaria</option>
-          </select>
-          <br /><br />
-          <label for="select-category">Choose a category:</label>
-          <select name="category" id="select-category">
-            <option value="">--Choose a category--</option>
-            <option value="business">Business</option>
-            <option value="entertainment">Entertainment</option>
-            <option value="general">General</option>
-            <option value="health">Health</option>
-            <option value="science">Science</option>
-            <option value="sports">Sports</option>
-            <option value="technology">Technology</option>
-          </select>
+          <form id="filter-fields">
+            <label for="search-by-keyword">Add keyword to search</label>
+            <input
+              type="text"
+              placeholder="enter keyword to search"
+              id="search-by-keyword"
+            /><br /><br />
+            <label for="select-country">Choose a Country:</label>
+            <select name="pets" id="select-country">
+              <option value="">--Choose country--</option>
+              <option value="ar">Argentina</option>
+              <option value="au">Argentina</option>
+              <option value="at">Austria</option>
+              <option value="be">Belgium</option>
+              <option value="br">Brazil</option>
+              <option value="bg">Bulgaria</option>
+            </select>
+            <br /><br />
+            <label for="select-category">Choose a category:</label>
+            <select name="category" id="select-category">
+              <option value="">--Choose a category--</option>
+              <option value="business">Business</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="general">General</option>
+              <option value="health">Health</option>
+              <option value="science">Science</option>
+              <option value="sports">Sports</option>
+              <option value="technology">Technology</option>
+            </select>
+            <br /><br />
+            <button type="submit" class="form-btn" id="get-news">
+              Get news
+            </button>
+            <button type="submit" class="form-btn" id="reset-all">
+              Reset All
+            </button>
+          </form>
         </div>
         <div class="news-articles"></div>
       </div>
