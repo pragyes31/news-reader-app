@@ -38,6 +38,10 @@ header {
   position: fixed;
 }
 
+#filter-fields {
+  margin: 10px 15px;
+}
+
 .news-articles {
   margin-left: 250px;
   width: calc(100vw - 250px);
