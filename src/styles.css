@@ -39,6 +39,10 @@ body {
   position: fixed;
 }
 
+#search-by-keyword {
+  width: 90%;
+}
+
 #filter-fields {
   margin: 10px 15px;
 }
