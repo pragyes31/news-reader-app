@@ -43,6 +43,11 @@ body {
   width: 90%;
 }
 
+.date-of-publish {
+  color: #888;
+  margin-top: -5px;
+}
+
 #filter-fields {
   margin: 10px 15px;
 }
