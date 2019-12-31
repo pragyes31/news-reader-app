@@ -6,9 +6,15 @@ import "./styles.css";
 function buildNewsApp() {
   const newsArticlesDiv = document.querySelectorAll(".news-articles");
   const filtersDiv = document.querySelector(".filters");
-  console.log(newsArticlesDiv, filtersDiv);
   const newsApp = {};
   return newsApp;
 }
 
 const newsApp = buildNewsApp();
+
+async function getNewsData() {
+  let newsPromise = new Promise((resolve, reject) => {
+    return resolve();
+  });
+  newsPromise.then(data => {});
+}
