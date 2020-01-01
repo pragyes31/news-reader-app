@@ -1,5 +1,5 @@
 import "./styles.css";
-
+import axios from "axios";
 // API : https://newsapi.org/v2/top-headlines&apiKey=2043fa143b224d2b8f1057943e2557f7
 // API key: 2043fa143b224d2b8f1057943e2557f7
 
