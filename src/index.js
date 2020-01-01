@@ -3,22 +3,28 @@ import "./styles.css";
 // API key: 2043fa143b224d2b8f1057943e2557f7
 
 function buildNewsApp() {
-  const newsArticlesDiv = document.querySelectorAll(".news-articles");
+  const newsArticlesDiv = document.querySelectorAll("#news-articles");
   const filtersDiv = document.querySelector(".filters");
   const newsApp = {
-    getData: function() {
+    populateNewsArticles: function() {
       fetch(
-        "https://newsapi.org/v2/everything?q=viratkohli&apiKey=2043fa143b224d2b8f1057943e2557f7"
+        "https://newsapi.org/v2/everything?q=justin&apiKey=2043fa143b224d2b8f1057943e2557f7"
       )
         .then(function(response) {
           return response.json();
         })
         .then(function(data) {
           console.log(data);
+          data.articles.forEach(article => {
+            let newsArticleDiv = document.createElement("div");
+            let newsHeaderDiv = document.createElement("header");
+            newsArticleDiv.className = "news-article";
+            newsHeaderDiv.className = "news-title";
+          });
         });
     }
   };
-  newsApp.getData();
+  newsApp.populateNewsArticles();
   return newsApp;
 }
 
