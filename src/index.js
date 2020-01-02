@@ -37,7 +37,7 @@ function buildNewsApp() {
       newsHeaderDiv.innerHTML = header;
       publishDateDiv.innerHTML = timestamp;
       newsDescDiv.innerHTML = description;
-      readMoreDiv.innerHTML = "Read more";
+      readMoreLink.innerHTML = "Read more";
       readMoreLink.href = articleLink;
     },
     populateNewsArticles: function() {
@@ -50,7 +50,7 @@ function buildNewsApp() {
         .then(function(data) {
           console.log(data);
           data.articles.forEach(article => {
-            console.log("boom");
+            //console.log("boom");
             newsApp.createNewsArticleDiv(
               article.title,
               article.publishedAt,
