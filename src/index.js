@@ -6,7 +6,12 @@ function buildNewsApp() {
   const newsArticlesDiv = document.querySelectorAll("#news-articles");
   const filtersDiv = document.querySelector(".filters");
   const newsApp = {
-    createNewsArticle: function(headline, timestamp, description, articleLink) {
+    createNewsArticleDiv: function(
+      header,
+      timestamp,
+      description,
+      articleLink
+    ) {
       let newsArticleDiv = document.createElement("div");
       let newsHeaderDiv = document.createElement("header");
       let publishDateDiv = document.createElement("div");
@@ -18,12 +23,16 @@ function buildNewsApp() {
       publishDateDiv.className = "date-of-publish";
       newsDescDiv.className = "news-description";
       readMoreDiv.className = "read-more";
-      readMoreLink.setAttribute("target", "_blank");
       newsArticleDiv.appendChild(newsHeaderDiv);
       newsArticleDiv.appendChild(publishDateDiv);
       newsArticleDiv.appendChild(newsDescDiv);
       newsArticleDiv.appendChild(readMoreDiv);
       readMoreDiv.appendChild(readMoreLink);
+      newsHeaderDiv.innerHTML = "header";
+      publishDateDiv.innerHTML = timestamp;
+      newsDescDiv.innerHTML = description;
+      readMoreDiv.innerHTML = "Read more";
+      readMoreLink.href = articleLink;
     },
     populateNewsArticles: function() {
       fetch(
@@ -35,7 +44,12 @@ function buildNewsApp() {
         .then(function(data) {
           console.log(data);
           data.articles.forEach(article => {
-            //readMoreLink.href = "https://google.com";
+            newsApp.createNewsArticleDiv(
+              article.title,
+              article.publishedAt,
+              article.description,
+              article.url
+            );
           });
         });
     }
