@@ -19,6 +19,11 @@ function buildNewsApp() {
       newsDescDiv.className = "news-description";
       readMoreDiv.className = "read-more";
       readMoreLink.setAttribute("target", "_blank");
+      newsArticleDiv.appendChild(newsHeaderDiv);
+      newsArticleDiv.appendChild(publishDateDiv);
+      newsArticleDiv.appendChild(newsDescDiv);
+      newsArticleDiv.appendChild(readMoreDiv);
+      readMoreDiv.appendChild(readMoreLink);
     },
     populateNewsArticles: function() {
       fetch(
