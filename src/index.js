@@ -6,7 +6,7 @@ function buildNewsApp() {
   const newsArticlesDiv = document.querySelectorAll("#news-articles");
   const filtersDiv = document.querySelector(".filters");
   const newsApp = {
-    createNewsArticle: function() {
+    createNewsArticle: function(headline, timestamp, description, articleLink) {
       let newsArticleDiv = document.createElement("div");
       let newsHeaderDiv = document.createElement("header");
       let publishDateDiv = document.createElement("div");
