@@ -6,11 +6,6 @@ function buildNewsApp() {
   const newsArticlesDiv = document.querySelector("#news-articles");
   const filtersDiv = document.querySelector(".filters");
   const newsApp = {
-    testPopulateData: function() {
-      console.log("pikachu");
-      console.log(newsArticlesDiv);
-      newsArticlesDiv.innerHTML = "boom";
-    },
     createNewsArticleDiv: function(
       header,
       timestamp,
@@ -62,8 +57,6 @@ function buildNewsApp() {
     }
   };
   newsApp.populateNewsArticles();
-  // newsApp.createNewsArticleDiv();
-  //newsApp.testPopulateData();
   return newsApp;
 }
 
