@@ -18,8 +18,17 @@ function buildNewsApp() {
           data.articles.forEach(article => {
             let newsArticleDiv = document.createElement("div");
             let newsHeaderDiv = document.createElement("header");
+            let publishDateDiv = document.createElement("div");
+            let newsDescDiv = document.createElement("div");
+            let readMoreDiv = document.createElement("div");
+            let readMoreLink = document.createElement("a");
             newsArticleDiv.className = "news-article";
             newsHeaderDiv.className = "news-title";
+            publishDateDiv.className = "date-of-publish";
+            newsDescDiv.className = "news-description";
+            readMoreDiv.className = "read-more";
+            readMoreLink.setAttribute("target", "_blank");
+            readMoreLink.href = "https://google.com";
           });
         });
     }
