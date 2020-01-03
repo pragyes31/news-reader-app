@@ -43,16 +43,17 @@ function buildNewsApp() {
       newsDescDiv.innerHTML = description;
       readMoreLink.innerHTML = "Read more";
       readMoreLink.href = articleLink;
+      readMoreLink.setAttribute("target", "_blank");
     },
     populateNewsArticles: function() {
       fetch(
-        "https://newsapi.org/v2/everything?q=sensex&apiKey=2043fa143b224d2b8f1057943e2557f7"
+        "https://newsapi.org/v2/top-headlines?country=us&apiKey=2043fa143b224d2b8f1057943e2557f7"
       )
         .then(function(response) {
           return response.json();
         })
         .then(function(data) {
-          //console.log(data);
+          console.log(data);
           data.articles.forEach(article => {
             //console.log("boom");
             newsApp.createNewsArticleDiv(
