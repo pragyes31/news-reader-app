@@ -5,15 +5,19 @@ import "./styles.css";
 function buildNewsApp() {
   const newsArticlesDiv = document.querySelector("#news-articles");
   const filtersDiv = document.querySelector(".filters");
-  const selectedCountry = document.querySelector("#select-country");
-  const selectedCategory = document.querySelector(".select-category");
+  const countrySelector = document.querySelector("#select-country");
+  const categorySelector = document.querySelector("#select-category");
+  const getNewsBtn = document.querySelector("#get-filtered-news");
   const newsApp = {
-    testSelectField: function() {
-      selectedCountry.addEventListener("change", () =>
-        console.log(
-          selectedCountry.options[selectedCountry.selectedIndex].value
-        )
-      );
+    filteredNews: function(e) {
+      e.preventDefault();
+      let keyword = document.querySelector("#search-by-keyword").value;
+      let selectedCountry =
+        countrySelector.options[countrySelector.selectedIndex].value;
+      let selectedCategory =
+        categorySelector.options[categorySelector.selectedIndex].value;
+
+      console.log(keyword, selectedCountry, selectedCategory);
     },
     createNewsArticleDiv: function(
       header,
@@ -47,7 +51,7 @@ function buildNewsApp() {
     },
     populateNewsArticles: function() {
       fetch(
-        "https://newsapi.org/v2/top-headlines?country=us&apiKey=2043fa143b224d2b8f1057943e2557f7"
+        "https://newsapi.org/v2/top-headlines?q=india&apiKey=2043fa143b224d2b8f1057943e2557f7"
       )
         .then(function(response) {
           return response.json();
@@ -67,7 +71,7 @@ function buildNewsApp() {
     }
   };
   newsApp.populateNewsArticles();
-  newsApp.testSelectField();
+  getNewsBtn.addEventListener("click", newsApp.filteredNews);
   return newsApp;
 }
 
