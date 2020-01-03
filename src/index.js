@@ -5,7 +5,16 @@ import "./styles.css";
 function buildNewsApp() {
   const newsArticlesDiv = document.querySelector("#news-articles");
   const filtersDiv = document.querySelector(".filters");
+  const selectedCountry = document.querySelector("#select-country");
+  const selectedCategory = document.querySelector(".select-category");
   const newsApp = {
+    testSelectField: function() {
+      selectedCountry.addEventListener("change", () =>
+        console.log(
+          selectedCountry.options[selectedCountry.selectedIndex].value
+        )
+      );
+    },
     createNewsArticleDiv: function(
       header,
       timestamp,
@@ -43,7 +52,7 @@ function buildNewsApp() {
           return response.json();
         })
         .then(function(data) {
-          console.log(data);
+          //console.log(data);
           data.articles.forEach(article => {
             //console.log("boom");
             newsApp.createNewsArticleDiv(
@@ -57,6 +66,7 @@ function buildNewsApp() {
     }
   };
   newsApp.populateNewsArticles();
+  newsApp.testSelectField();
   return newsApp;
 }
 

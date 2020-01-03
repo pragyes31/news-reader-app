@@ -33,9 +33,9 @@ body {
 
 .filters {
   width: 250px;
-  height: 100%;
   background-color: #eee;
   position: fixed;
+  height: 100%;
 }
 
 #search-by-keyword {
