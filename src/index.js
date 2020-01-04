@@ -16,7 +16,11 @@ function buildNewsApp() {
         countrySelector.options[countrySelector.selectedIndex].value;
       let selectedCategory =
         categorySelector.options[categorySelector.selectedIndex].value;
-
+      let newsUrl = "https://newsapi.org/v2/top-headlines";
+      const newsAPIKey = "apiKey=2043fa143b224d2b8f1057943e2557f7";
+      fetch(`${newsUrl}?q=${keyword}`).then(function() {
+        return;
+      });
       console.log(keyword, selectedCountry, selectedCategory);
     },
     createNewsArticleDiv: function(
@@ -51,7 +55,7 @@ function buildNewsApp() {
     },
     populateNewsArticles: function() {
       fetch(
-        "https://newsapi.org/v2/top-headlines?q=india&apiKey=2043fa143b224d2b8f1057943e2557f7"
+        "https://newsapi.org/v2/top-headlines?q=modi&category=business&apiKey=2043fa143b224d2b8f1057943e2557f7"
       )
         .then(function(response) {
           return response.json();
