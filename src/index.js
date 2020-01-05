@@ -4,10 +4,10 @@ import "./styles.css";
 
 function buildNewsApp() {
   const newsArticlesDiv = document.querySelector("#news-articles");
-  const filtersDiv = document.querySelector(".filters");
   const countrySelector = document.querySelector("#select-country");
   const categorySelector = document.querySelector("#select-category");
   const getNewsBtn = document.querySelector("#get-filtered-news");
+
   const newsApp = {
     filteredNews: function(e) {
       e.preventDefault();
