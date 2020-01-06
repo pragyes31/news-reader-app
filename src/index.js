@@ -11,15 +11,26 @@ function buildNewsApp() {
   const newsApp = {
     filteredNews: function(e) {
       e.preventDefault();
-      let keyword = document.querySelector("#search-by-keyword").value;
+      let keyword =
+        document.querySelector("#search-by-keyword").value === ""
+          ? ""
+          : `q=${document.querySelector("#search-by-keyword").value}`;
       let selectedCountry =
-        countrySelector.options[countrySelector.selectedIndex].value;
+        countrySelector.options[countrySelector.selectedIndex].value === ""
+          ? ""
+          : `&country=${
+              countrySelector.options[countrySelector.selectedIndex].value
+            }`;
       let selectedCategory =
-        categorySelector.options[categorySelector.selectedIndex].value;
+        categorySelector.options[categorySelector.selectedIndex].value === ""
+          ? ""
+          : `&category=${
+              categorySelector.options[categorySelector.selectedIndex].value
+            }`;
       let newsUrl = "https://newsapi.org/v2/top-headlines";
       const newsAPIKey = "apiKey=2043fa143b224d2b8f1057943e2557f7";
       fetch(
-        `${newsUrl}?q=${keyword}&country=${selectedCountry}&category=${selectedCategory}&${newsAPIKey}`
+        `${newsUrl}?${keyword}${selectedCountry}${selectedCategory}&${newsAPIKey}`
       ).then(function() {
         return;
       });
