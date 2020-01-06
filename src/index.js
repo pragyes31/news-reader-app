@@ -29,6 +29,8 @@ function buildNewsApp() {
             }`;
       let newsUrl = "https://newsapi.org/v2/top-headlines";
       const newsAPIKey = "apiKey=2043fa143b224d2b8f1057943e2557f7";
+      if (!keyword && !selectedCountry && !selectedCategory) {
+      }
       newsArticlesDiv.innerHTML = "";
       fetch(
         `${newsUrl}?${keyword}${selectedCountry}${selectedCategory}&${newsAPIKey}`
@@ -87,7 +89,7 @@ function buildNewsApp() {
     }
   };
   newsApp.populateNewsArticles(
-    "https://newsapi.org/v2/everything&country=in&apiKey=2043fa143b224d2b8f1057943e2557f7"
+    "https://newsapi.org/v2/top-headlines?country=in&apiKey=2043fa143b224d2b8f1057943e2557f7"
   );
   getNewsBtn.addEventListener("click", () => newsApp.filteredNews);
   return newsApp;
