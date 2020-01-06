@@ -27,16 +27,17 @@ function buildNewsApp() {
           : `&category=${
               categorySelector.options[categorySelector.selectedIndex].value
             }`;
-      let newsUrl = "https://newsapi.org/v2/top-headlines";
+      let newsAPIEntryPoint = "https://newsapi.org/v2/top-headlines";
       const newsAPIKey = "apiKey=2043fa143b224d2b8f1057943e2557f7";
-      if (!keyword && !selectedCountry && !selectedCategory) {
-      }
+      const newsUrl = `${newsAPIEntryPoint}?${keyword}${selectedCountry}${selectedCategory}&${newsAPIKey}`;
       newsArticlesDiv.innerHTML = "";
-      fetch(
-        `${newsUrl}?${keyword}${selectedCountry}${selectedCategory}&${newsAPIKey}`
-      ).then(function() {
-        return;
-      });
+      // fetch(
+      //   `${newsUrl}?${keyword}${selectedCountry}${selectedCategory}&${newsAPIKey}`
+      // ).then(function() {
+      //   return;
+      // });
+      console.log(newsUrl);
+      newsApp.populateNewsArticles(newsUrl);
       console.log(keyword, selectedCountry, selectedCategory);
     },
     createNewsArticleDiv: function(
@@ -89,9 +90,9 @@ function buildNewsApp() {
     }
   };
   newsApp.populateNewsArticles(
-    "https://newsapi.org/v2/top-headlines?country=in&apiKey=2043fa143b224d2b8f1057943e2557f7"
+    "https://newsapi.org/v2/top-headlines?q=trump&country=ir&apiKey=2043fa143b224d2b8f1057943e2557f7 "
   );
-  getNewsBtn.addEventListener("click", () => newsApp.filteredNews);
+  getNewsBtn.addEventListener("click", newsApp.filteredNews);
   return newsApp;
 }
 
