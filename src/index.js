@@ -14,7 +14,7 @@ function buildNewsApp() {
       let keyword =
         document.querySelector("#search-by-keyword").value === ""
           ? ""
-          : `q=${document.querySelector("#search-by-keyword").value}`;
+          : `${document.querySelector("#search-by-keyword").value}`;
       let selectedCountry =
         countrySelector.options[countrySelector.selectedIndex].value === ""
           ? ""
@@ -29,13 +29,8 @@ function buildNewsApp() {
             }`;
       let newsAPIEntryPoint = "https://newsapi.org/v2/top-headlines";
       const newsAPIKey = "apiKey=2043fa143b224d2b8f1057943e2557f7";
-      const newsUrl = `${newsAPIEntryPoint}?${keyword}${selectedCountry}${selectedCategory}&${newsAPIKey}`;
+      let newsUrl = `${newsAPIEntryPoint}?q=${keyword}${selectedCountry}${selectedCategory}&${newsAPIKey}`;
       newsArticlesDiv.innerHTML = "";
-      // fetch(
-      //   `${newsUrl}?${keyword}${selectedCountry}${selectedCategory}&${newsAPIKey}`
-      // ).then(function() {
-      //   return;
-      // });
       console.log(newsUrl);
       newsApp.populateNewsArticles(newsUrl);
       console.log(keyword, selectedCountry, selectedCategory);
@@ -90,7 +85,7 @@ function buildNewsApp() {
     }
   };
   newsApp.populateNewsArticles(
-    "https://newsapi.org/v2/top-headlines?q=trump&country=us&apiKey=2043fa143b224d2b8f1057943e2557f7 "
+    "https://newsapi.org/v2/top-headlines?country=de&category=business&apiKey=2043fa143b224d2b8f1057943e2557f7 "
   );
   getNewsBtn.addEventListener("click", newsApp.filteredNews);
   return newsApp;
