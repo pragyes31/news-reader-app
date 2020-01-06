@@ -90,7 +90,7 @@ function buildNewsApp() {
     }
   };
   newsApp.populateNewsArticles(
-    "https://newsapi.org/v2/top-headlines?q=trump&country=ir&apiKey=2043fa143b224d2b8f1057943e2557f7 "
+    "https://newsapi.org/v2/top-headlines?q=trump&country=us&apiKey=2043fa143b224d2b8f1057943e2557f7 "
   );
   getNewsBtn.addEventListener("click", newsApp.filteredNews);
   return newsApp;
