@@ -37,7 +37,6 @@ body {
   background-color: #eee;
   position: fixed;
   height: 100%;
-  display: flex;
 }
 
 #search-by-keyword {

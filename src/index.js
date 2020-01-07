@@ -76,7 +76,7 @@ function buildNewsApp() {
             //console.log("boom");
             let jsonDate = article.publishedAt;
             let date = new Date(jsonDate);
-            console.log(date);
+            console.log(jsonDate, date);
             newsApp.createNewsArticleDiv(
               article.title,
               date,
