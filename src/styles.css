@@ -39,6 +39,24 @@ body {
   height: 100%;
 }
 
+.news-tabs {
+  background-color: #eee;
+  color: #728506;
+}
+
+.news-category {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.news-category:hover {
+  background-color: #728506;
+  color: #eee;
+}
+
 #search-by-keyword {
   width: 90%;
 }
