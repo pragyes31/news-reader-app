@@ -42,6 +42,7 @@ body {
 .news-tabs {
   background-color: #ddd;
   color: #728506;
+  width: 100%;
 }
 
 .news-category {
@@ -101,7 +102,7 @@ body {
   margin-top: 12px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .news-section {
     display: flex;
     flex-direction: column;
@@ -129,5 +130,12 @@ body {
 
   .news-article {
     width: 95%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .news-tabs {
+    flex-direction: column;
+    width: 100%;
   }
 }
