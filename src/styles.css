@@ -45,7 +45,7 @@ body {
 }
 
 .news-category {
-  height: 30px;
+  height: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,7 +58,7 @@ body {
 }
 
 #search-by-keyword {
-  width: 90%;
+  width: 200px;
 }
 
 .date-of-publish {
@@ -105,6 +105,15 @@ body {
   .filters {
     width: 100%;
     height: 220px;
+  }
+
+  .news-tabs {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .news-category {
+    width: 50%;
   }
 
   #news-articles {
