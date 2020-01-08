@@ -40,7 +40,7 @@ body {
 }
 
 .news-tabs {
-  background-color: #eee;
+  background-color: #ddd;
   color: #728506;
 }
 
@@ -52,9 +52,14 @@ body {
   cursor: pointer;
 }
 
+.active-news-category {
+  background-color: #728506;
+  color: #ddd;
+}
+
 .news-category:hover {
   background-color: #728506;
-  color: #eee;
+  color: #ddd;
 }
 
 #search-by-keyword {

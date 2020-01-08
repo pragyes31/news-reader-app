@@ -7,8 +7,14 @@ function buildNewsApp() {
   const countrySelector = document.querySelector("#select-country");
   const categorySelector = document.querySelector("#select-category");
   const getNewsBtn = document.querySelector("#get-filtered-news");
-
+  const newsCategory = document.querySelectorAll(".news-category");
   const newsApp = {
+    testClicks: function(e) {
+      newsCategory.forEach(category => {
+        category.classList.remove("active-news-category");
+      });
+      e.target.className += " active-news-category";
+    },
     filteredNews: function(e) {
       e.preventDefault();
       let keyword =
@@ -31,9 +37,8 @@ function buildNewsApp() {
       const newsAPIKey = "apiKey=2043fa143b224d2b8f1057943e2557f7";
       let newsUrl = `${newsAPIEntryPoint}?q=${keyword}${selectedCountry}${selectedCategory}&${newsAPIKey}`;
       newsArticlesDiv.innerHTML = "";
-      console.log(newsUrl);
       newsApp.populateNewsArticles(newsUrl);
-      console.log(keyword, selectedCountry, selectedCategory);
+      //console.log(keyword, selectedCountry, selectedCategory);
     },
     createNewsArticleDiv: function(
       header,
@@ -71,12 +76,12 @@ function buildNewsApp() {
           return response.json();
         })
         .then(function(data) {
-          console.log(data);
+          //console.log(data);
           data.articles.forEach(article => {
             //console.log("boom");
             let jsonDate = article.publishedAt;
             let date = new Date(jsonDate);
-            console.log(jsonDate, date);
+            //console.log(jsonDate, date);
             newsApp.createNewsArticleDiv(
               article.title,
               date,
@@ -88,9 +93,12 @@ function buildNewsApp() {
     }
   };
   newsApp.populateNewsArticles(
-    "https://newsapi.org/v2/top-headlines?country=de&category=business&apiKey=2043fa143b224d2b8f1057943e2557f7 "
+    "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=2043fa143b224d2b8f1057943e2557f7 "
   );
   getNewsBtn.addEventListener("click", newsApp.filteredNews);
+  newsCategory.forEach(category => {
+    category.addEventListener("click", newsApp.testClicks);
+  });
   return newsApp;
 }
 
