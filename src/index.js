@@ -9,12 +9,22 @@ function buildNewsApp() {
   const getNewsBtn = document.querySelector("#get-filtered-news");
   const newsCategory = document.querySelectorAll(".news-category");
   const searchParams = document.querySelectorAll(".search-params");
+  const everythingFilter = document.querySelector("#everything-filter");
+  const topHealinesFilter = document.querySelector("#top-healines-filter");
   const newsApp = {
     testClicks: function(e) {
       newsCategory.forEach(category => {
         category.classList.remove("active-news-category");
       });
       e.target.className += " active-news-category";
+      if (e.target.id === "everything") {
+        topHealinesFilter.style.display = "none";
+        everythingFilter.style.display = "block";
+      } else {
+        topHealinesFilter.style.display = "block";
+        everythingFilter.style.display = "none";
+      }
+      console.log(e.target.id);
     },
     filteredNews: function(e) {
       e.preventDefault();
