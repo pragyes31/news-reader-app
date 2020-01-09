@@ -11,6 +11,7 @@ function buildNewsApp() {
   const everythingFilter = document.querySelector("#everything-filter");
   const topHealinesFilter = document.querySelector("#top-healines-filter");
   const getEverythingBtn = document.querySelector("#get-everything");
+  const errorMessage = document.querySelector("#error-message");
   const newsAPIKey = "apiKey=2043fa143b224d2b8f1057943e2557f7";
   const newsApp = {
     switchTabs: function(e) {
@@ -33,9 +34,16 @@ function buildNewsApp() {
       e.preventDefault();
       let keyword = document.querySelector("#search-by-keyword").value;
       let everythingEntryPoint = "https://newsapi.org/v2/top-headlines";
-      let newsUrl = `${everythingEntryPoint}?q=${keyword}&${newsAPIKey}`;
-      newsArticlesDiv.innerHTML = "";
-      newsApp.populateNewsArticles(newsUrl);
+      if (keyword) {
+        newsArticlesDiv.innerHTML = "";
+        newsApp.populateNewsArticles(
+          `${everythingEntryPoint}?q=${keyword}&${newsAPIKey}`
+        );
+        errorMessage.innerHTML = "";
+      } else {
+        errorMessage.innerHTML =
+          "Please enter atleast one word to continuee the search";
+      }
     },
     filteredNews: function(e) {
       e.preventDefault();
