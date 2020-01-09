@@ -8,7 +8,6 @@ function buildNewsApp() {
   const categorySelector = document.querySelector("#select-category");
   const getNewsBtn = document.querySelector("#get-filtered-news");
   const newsCategory = document.querySelectorAll(".news-category");
-  const searchParams = document.querySelectorAll(".search-params");
   const everythingFilter = document.querySelector("#everything-filter");
   const topHealinesFilter = document.querySelector("#top-healines-filter");
   const newsApp = {
@@ -17,6 +16,9 @@ function buildNewsApp() {
         category.classList.remove("active-news-category");
       });
       e.target.className += " active-news-category";
+      newsApp.showAndHide(e);
+    },
+    showAndHide: function(e) {
       if (e.target.id === "everything") {
         topHealinesFilter.style.display = "none";
         everythingFilter.style.display = "block";
@@ -24,7 +26,6 @@ function buildNewsApp() {
         topHealinesFilter.style.display = "block";
         everythingFilter.style.display = "none";
       }
-      console.log(e.target.id);
     },
     filteredNews: function(e) {
       e.preventDefault();

@@ -63,6 +63,10 @@ body {
   color: #ddd;
 }
 
+#top-healines-filter {
+  display: none;
+}
+
 #search-by-keyword {
   width: 200px;
 }
