@@ -8,6 +8,7 @@ function buildNewsApp() {
   const categorySelector = document.querySelector("#select-category");
   const getNewsBtn = document.querySelector("#get-filtered-news");
   const newsCategory = document.querySelectorAll(".news-category");
+  const searchParams = document.querySelectorAll(".search-params");
   const newsApp = {
     testClicks: function(e) {
       newsCategory.forEach(category => {

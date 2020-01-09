@@ -42,7 +42,6 @@ body {
 .news-tabs {
   background-color: #ddd;
   color: #728506;
-  width: 100%;
 }
 
 .news-category {
@@ -51,6 +50,7 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  width: 100%;
 }
 
 .active-news-category {
@@ -110,7 +110,7 @@ body {
 
   .filters {
     width: 100%;
-    height: 220px;
+    height: 240px;
   }
 
   .news-tabs {
@@ -134,8 +134,15 @@ body {
 }
 
 @media only screen and (max-width: 420px) {
+  .filters {
+    height: 300px;
+  }
+
   .news-tabs {
     flex-direction: column;
+  }
+
+  .news-category {
     width: 100%;
   }
 }
