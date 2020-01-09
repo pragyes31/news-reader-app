@@ -6,12 +6,12 @@ function buildNewsApp() {
   const newsArticlesDiv = document.querySelector("#news-articles");
   const countrySelector = document.querySelector("#select-country");
   const categorySelector = document.querySelector("#select-category");
-  const getNewsBtn = document.querySelector("#get-filtered-news");
+  const getNewsBtn = document.querySelector(".get-filtered-news");
   const newsCategory = document.querySelectorAll(".news-category");
   const everythingFilter = document.querySelector("#everything-filter");
   const topHealinesFilter = document.querySelector("#top-healines-filter");
   const newsApp = {
-    testClicks: function(e) {
+    switchTabs: function(e) {
       newsCategory.forEach(category => {
         category.classList.remove("active-news-category");
       });
@@ -109,7 +109,7 @@ function buildNewsApp() {
   );
   getNewsBtn.addEventListener("click", newsApp.filteredNews);
   newsCategory.forEach(category => {
-    category.addEventListener("click", newsApp.testClicks);
+    category.addEventListener("click", newsApp.switchTabs);
   });
   return newsApp;
 }
