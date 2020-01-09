@@ -10,6 +10,8 @@ function buildNewsApp() {
   const newsCategory = document.querySelectorAll(".news-category");
   const everythingFilter = document.querySelector("#everything-filter");
   const topHealinesFilter = document.querySelector("#top-healines-filter");
+  const getEverythingBtn = document.querySelector("#get-everything");
+  const newsAPIKey = "apiKey=2043fa143b224d2b8f1057943e2557f7";
   const newsApp = {
     switchTabs: function(e) {
       newsCategory.forEach(category => {
@@ -27,12 +29,16 @@ function buildNewsApp() {
         everythingFilter.style.display = "none";
       }
     },
+    getEverythingNews: function(e) {
+      e.preventDefault();
+      let keyword = document.querySelector("#search-by-keyword").value;
+      let everythingEntryPoint = "https://newsapi.org/v2/top-headlines";
+      let newsUrl = `${everythingEntryPoint}?q=${keyword}&${newsAPIKey}`;
+      newsArticlesDiv.innerHTML = "";
+      newsApp.populateNewsArticles(newsUrl);
+    },
     filteredNews: function(e) {
       e.preventDefault();
-      let keyword =
-        document.querySelector("#search-by-keyword").value === ""
-          ? ""
-          : `${document.querySelector("#search-by-keyword").value}`;
       let selectedCountry =
         countrySelector.options[countrySelector.selectedIndex].value === ""
           ? ""
@@ -107,7 +113,7 @@ function buildNewsApp() {
   newsApp.populateNewsArticles(
     "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=2043fa143b224d2b8f1057943e2557f7 "
   );
-  getNewsBtn.addEventListener("click", newsApp.filteredNews);
+  getEverythingBtn.addEventListener("click", newsApp.getEverythingNews);
   newsCategory.forEach(category => {
     category.addEventListener("click", newsApp.switchTabs);
   });
