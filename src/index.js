@@ -47,7 +47,7 @@ function buildNewsApp() {
             }`;
       let newsAPIEntryPoint = "https://newsapi.org/v2/top-headlines";
       const newsAPIKey = "apiKey=2043fa143b224d2b8f1057943e2557f7";
-      let newsUrl = `${newsAPIEntryPoint}?q=${keyword}${selectedCountry}${selectedCategory}&${newsAPIKey}`;
+      let newsUrl = `${newsAPIEntryPoint}?q=${selectedCountry}${selectedCategory}${keyword}&${newsAPIKey}`;
       newsArticlesDiv.innerHTML = "";
       newsApp.populateNewsArticles(newsUrl);
       //console.log(keyword, selectedCountry, selectedCategory);

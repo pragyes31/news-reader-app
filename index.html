@@ -19,12 +19,73 @@
             </div>
           </div>
           <div class="search-params">
-            <div id="everything-filter">Search Everything</div>
-            <div id="top-healines-filter">Search top headlines</div>
+            <div id="everything-filter">
+              <form id="filter-fields">
+                <label for="search-by-keyword">Add keyword to search</label>
+                <input
+                  type="text"
+                  placeholder="enter keyword to search"
+                  id="search-by-keyword"
+                  autofocus
+                />
+                <button type="submit" class="form-btn" id="get-filtered-news">
+                  Get news
+                </button>
+              </form>
+            </div>
+            <div id="top-healines-filter">
+              <form id="filter-fields">
+                <label for="search-by-keyword">Add keyword to search</label>
+
+                <label for="select-country">Choose a Country:</label>
+                <select name="pets" id="select-country" class="select-option">
+                  <option value="">-- Choose a country --</option>
+                  <option value="ar">Argentina</option>
+                  <option value="au">Australia</option>
+                  <option value="at">Austria</option>
+                  <option value="be">Belgium</option>
+                  <option value="br">Brazil</option>
+                  <option value="bg">Bulgaria</option>
+                  <option value="ca">Canada</option>
+                  <option value="cn">China</option>
+                  <option value="co">Colombia</option>
+                  <option value="cu">Cuba</option>
+                  <option value="cz">Czech Republic</option>
+                  <option value="eg">Egypt</option>
+                  <option value="fr">Francee</option>
+                  <option value="de">Germany</option>
+                  <option value="gr">Greece</option>
+                  <option value="hk">Hong Kong</option>
+                  <option value="hu">Hungary</option>
+                  <option value="in">India</option>
+                  <option value="us">United States</option>
+                </select>
+                <br /><br />
+                <label for="select-category">Choose a category:</label>
+                <select
+                  name="category"
+                  id="select-category"
+                  class="select-option"
+                >
+                  <option value="">--Choose a category--</option>
+                  <option value="business">Business</option>
+                  <option value="entertainment">Entertainment</option>
+                  <option value="general">General</option>
+                  <option value="health">Health</option>
+                  <option value="science">Science</option>
+                  <option value="sports">Sports</option>
+                  <option value="technology">Technology</option>
+                </select>
+                <br /><br />
+                <button type="submit" class="form-btn" id="get-filtered-news">
+                  Get news
+                </button>
+
+                <div id="error-message"></div>
+              </form>
+            </div>
           </div>
-          <!-- <form id="everything-filter"></form>
-          <form id="top-headlines-filter"></form> -->
-          <form id="filter-fields">
+          <!-- <form id="filter-fields">
             <label for="search-by-keyword">Add keyword to search</label>
             <input
               type="text"
@@ -75,7 +136,7 @@
               Reset All
             </button>
             <div id="error-message"></div>
-          </form>
+          </form> -->
         </div>
         <div id="news-articles"></div>
       </div>
