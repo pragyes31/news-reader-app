@@ -63,6 +63,12 @@ body {
   color: #ddd;
 }
 
+#error-message {
+  color: rgb(188, 43, 43);
+  font-size: 13px;
+  margin-top: 5px;
+}
+
 #top-healines-filter {
   display: none;
 }
