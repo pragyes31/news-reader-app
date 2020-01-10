@@ -23,7 +23,14 @@
           <div id="everything-filter">
             <form id="filter-fields">
               <label for="search-by-keyword">Add keyword to search</label>
-              <input type="text" placeholder="enter keyword to search" id="search-by-keyword" autofocus required />
+              <input type="text" placeholder="enter keyword to search" id="search-by-keyword" autofocus  /><br /><br />
+              <label for="sort-by">Sort by:</label>
+              <select name="sort-by" id="sort-by" class="select-option">
+                <option value="publishedAt">Published At</option>
+                <option value="relevancy">Relevancy</option>
+                <option value="popularity">Popularity</option>
+                
+              </select><br /><br />
               <button type="submit" class="get-filtered-news" id="get-everything">
                 Get news
               </button>

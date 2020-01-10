@@ -6,7 +6,6 @@ function buildNewsApp() {
   const newsArticlesDiv = document.querySelector("#news-articles");
   const countrySelector = document.querySelector("#select-country");
   const categorySelector = document.querySelector("#select-category");
-  const getNewsBtn = document.querySelector(".get-filtered-news");
   const newsCategory = document.querySelectorAll(".news-category");
   const everythingFilter = document.querySelector("#everything-filter");
   const topHealinesFilter = document.querySelector("#top-healines-filter");
@@ -119,7 +118,7 @@ function buildNewsApp() {
     }
   };
   newsApp.populateNewsArticles(
-    "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=2043fa143b224d2b8f1057943e2557f7 "
+    "https://newsapi.org/v2/top-headlines?country=in&apiKey=2043fa143b224d2b8f1057943e2557f7 "
   );
   getEverythingBtn.addEventListener("click", newsApp.getEverythingNews);
   newsCategory.forEach(category => {
