@@ -10,6 +10,7 @@ function buildNewsApp() {
   const everythingFilter = document.querySelector("#everything-filter");
   const topHealinesFilter = document.querySelector("#top-healines-filter");
   const getEverythingBtn = document.querySelector("#get-everything");
+  const getTopHeadlinesBtn = document.querySelector("#get-top-headlines");
   const errorMessage = document.querySelector("#error-message");
   const sortBy = document.querySelector("#sort-by");
   const newsAPIKey = "apiKey=2043fa143b224d2b8f1057943e2557f7";
@@ -47,8 +48,27 @@ function buildNewsApp() {
         errorMessage.innerHTML = "";
       } else {
         errorMessage.innerHTML =
-          "Please enter atleast one word to continuee the search";
+          "Please enter atleast one word to continue the search";
       }
+    },
+    getTopHeadlines: function(e) {
+      e.preventDefault();
+      let selectedCountry =
+        countrySelector.options[countrySelector.selectedIndex].value === ""
+          ? ""
+          : `&country=${
+              countrySelector.options[countrySelector.selectedIndex].value
+            }`;
+      let selectedCategory =
+        categorySelector.options[categorySelector.selectedIndex].value === ""
+          ? ""
+          : `&category=${
+              categorySelector.options[categorySelector.selectedIndex].value
+            }`;
+      let topHeadlinesEntryPoint = "https://newsapi.org/v2/top-headlines";
+      let newsUrl = `${topHeadlinesEntryPoint}?q=${selectedCountry}${selectedCategory}&${newsAPIKey}`;
+      newsArticlesDiv.innerHTML = "";
+      newsApp.populateNewsArticles(newsUrl);
     },
     filteredNews: function(e) {
       e.preventDefault();
@@ -66,7 +86,7 @@ function buildNewsApp() {
             }`;
       let newsAPIEntryPoint = "https://newsapi.org/v2/top-headlines";
       const newsAPIKey = "apiKey=2043fa143b224d2b8f1057943e2557f7";
-      let newsUrl = `${newsAPIEntryPoint}?q=${selectedCountry}${selectedCategory}${keyword}&${newsAPIKey}`;
+      let newsUrl = `${newsAPIEntryPoint}?q=${selectedCountry}${selectedCategory}&${newsAPIKey}`;
       newsArticlesDiv.innerHTML = "";
       newsApp.populateNewsArticles(newsUrl);
       //console.log(keyword, selectedCountry, selectedCategory);
@@ -124,9 +144,10 @@ function buildNewsApp() {
     }
   };
   newsApp.populateNewsArticles(
-    "https://newsapi.org/v2/top-headlines?country=in&apiKey=2043fa143b224d2b8f1057943e2557f7 "
+    "https://newsapi.org/v2/everything?q=boeing&sortBy=publishedAt&apiKey=2043fa143b224d2b8f1057943e2557f7 "
   );
   getEverythingBtn.addEventListener("click", newsApp.getEverythingNews);
+  getTopHeadlinesBtn.addEventListener("click", newsApp.getTopHeadlines);
   newsCategory.forEach(category => {
     category.addEventListener("click", newsApp.switchTabs);
   });
