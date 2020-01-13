@@ -77,10 +77,12 @@ function buildNewsApp() {
             let jsonDate = article.publishedAt;
             console.log(jsonDate);
             let fullDate = new Date(jsonDate);
-            //let date = `${fullDate.getDate()} ${fullDate.getMonth()}, ${fullDate.getFullYear()}`;
+            let date = `${fullDate.getDate()} ${
+              monthNames[fullDate.getMonth()]
+            }, ${fullDate.getFullYear()}`;
             newsApp.createNewsArticleDiv(
               article.title,
-              fullDate,
+              date,
               article.description,
               article.url
             );
