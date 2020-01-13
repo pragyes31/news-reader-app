@@ -13,16 +13,32 @@ body {
 .main-title {
   width: 100%;
   height: 60px;
-  background-color: #8ec5fc;
-  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+  background: #000000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #434343,
+    #000000
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #434343,
+    #000000
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 23px;
+  font-size: 25px;
   font-weight: 500;
   font-family: "Bitter", serif;
   z-index: 2;
+  color: rgb(255, 255, 255);
+}
+
+.period {
+  color: rgb(199, 10, 10);
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .news-section {
