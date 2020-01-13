@@ -131,7 +131,7 @@ function buildNewsApp() {
     }
   };
   newsApp.populateNewsArticles(
-    "https://newsapi.org/v2/everything?q=javascript&apiKey=2043fa143b224d2b8f1057943e2557f7 "
+    "https://newsapi.org/v2/top-headlines?country=in&apiKey=2043fa143b224d2b8f1057943e2557f7 "
   );
   getEverythingBtn.addEventListener("click", newsApp.getEverythingNews);
   getTopHeadlinesBtn.addEventListener("click", newsApp.getTopHeadlines);

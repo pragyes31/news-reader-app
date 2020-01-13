@@ -37,7 +37,7 @@ body {
 }
 
 .period {
-  color: rgb(199, 10, 10);
+  color: #3282b8;
   font-size: 30px;
   font-weight: bold;
 }
@@ -50,14 +50,15 @@ body {
 
 .filters {
   width: 250px;
-  background-color: #eee;
+  background-color: #0f4c75;
   position: fixed;
   height: 100%;
+  color: #bbe1fa;
 }
 
 .news-tabs {
   background-color: #ddd;
-  color: #728506;
+  color: #3282b8;
 }
 
 .news-category {
@@ -70,12 +71,12 @@ body {
 }
 
 .active-news-category {
-  background-color: #728506;
+  background-color: #3282b8;
   color: #ddd;
 }
 
 .news-category:hover {
-  background-color: #728506;
+  background-color: #3282b8;
   color: #ddd;
 }
 
@@ -95,6 +96,15 @@ body {
 
 #search-by-keyword {
   width: 200px;
+  height: 25px;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 1rem;
+}
+
+::placeholder {
+  padding-left: 10px;
+  color: #0f4c75;
 }
 
 .date-of-publish {
