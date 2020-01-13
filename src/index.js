@@ -19,6 +19,20 @@ function buildNewsApp() {
   );
   const sortBy = document.querySelector("#sort-by");
   const newsAPIKey = "apiKey=2043fa143b224d2b8f1057943e2557f7";
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
   const newsApp = {
     createNewsArticleDiv: function(
       header,
@@ -61,11 +75,12 @@ function buildNewsApp() {
         .then(function(data) {
           data.articles.forEach(article => {
             let jsonDate = article.publishedAt;
+            console.log(jsonDate);
             let fullDate = new Date(jsonDate);
-            let date = `${fullDate.getDate()} ${fullDate.getMonth()}, ${fullDate.getFullYear()}`;
+            //let date = `${fullDate.getDate()} ${fullDate.getMonth()}, ${fullDate.getFullYear()}`;
             newsApp.createNewsArticleDiv(
               article.title,
-              date,
+              fullDate,
               article.description,
               article.url
             );

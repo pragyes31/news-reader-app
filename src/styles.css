@@ -57,8 +57,9 @@ body {
 }
 
 .news-tabs {
-  background-color: #ddd;
-  color: #3282b8;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ddd;
+  color: #fff;
 }
 
 .news-category {
@@ -72,12 +73,6 @@ body {
 
 .active-news-category {
   background-color: #3282b8;
-  color: #ddd;
-}
-
-.news-category:hover {
-  background-color: #3282b8;
-  color: #ddd;
 }
 
 .get-filtered-news {
@@ -99,12 +94,20 @@ body {
   height: 25px;
   margin-top: 0.5rem;
   border: none;
-  border-radius: 1rem;
+  background: none;
+  color: #fff;
+  z-index: 3;
+  border-bottom: 1px solid #ddd;
+}
+
+#search-by-keyword:focus {
+  outline: none;
+  border-bottom: 1px solid #ffcc00;
 }
 
 ::placeholder {
-  padding-left: 10px;
-  color: #0f4c75;
+  padding-left: 5px;
+  color: #fff;
 }
 
 .date-of-publish {
