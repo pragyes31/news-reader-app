@@ -32,17 +32,20 @@ function buildNewsApp() {
       let newsDescDiv = document.createElement("div");
       let readMoreDiv = document.createElement("div");
       let readMoreLink = document.createElement("a");
+
       newsArticleDiv.className = "news-article";
       newsHeaderDiv.className = "news-title";
       publishDateDiv.className = "date-of-publish";
       newsDescDiv.className = "news-description";
       readMoreDiv.className = "read-more";
+
       newsArticlesDiv.appendChild(newsArticleDiv);
       newsArticleDiv.appendChild(newsHeaderDiv);
       newsArticleDiv.appendChild(publishDateDiv);
       newsArticleDiv.appendChild(newsDescDiv);
       newsArticleDiv.appendChild(readMoreDiv);
       readMoreDiv.appendChild(readMoreLink);
+
       newsHeaderDiv.innerHTML = header;
       publishDateDiv.innerHTML = timestamp;
       newsDescDiv.innerHTML = description;
@@ -58,7 +61,8 @@ function buildNewsApp() {
         .then(function(data) {
           data.articles.forEach(article => {
             let jsonDate = article.publishedAt;
-            let date = new Date(jsonDate);
+            let fullDate = new Date(jsonDate);
+            let date = `${fullDate.getDate()} ${fullDate.getMonth()}, ${fullDate.getFullYear()}`;
             newsApp.createNewsArticleDiv(
               article.title,
               date,
