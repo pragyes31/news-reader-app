@@ -83,7 +83,7 @@ body {
   cursor: pointer;
 }
 
-#error-message {
+.error-message {
   color: rgb(188, 43, 43);
   font-size: 13px;
   margin-top: 5px;

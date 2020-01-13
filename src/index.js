@@ -11,7 +11,12 @@ function buildNewsApp() {
   const topHealinesFilter = document.querySelector("#top-healines-filter");
   const getEverythingBtn = document.querySelector("#get-everything");
   const getTopHeadlinesBtn = document.querySelector("#get-top-headlines");
-  const errorMessage = document.querySelector("#error-message");
+  const everythingErrorMessage = document.querySelector(
+    "#everything-error-message"
+  );
+  const topHeadlinesErrorMessage = document.querySelector(
+    "#top-headlines-error-message"
+  );
   const sortBy = document.querySelector("#sort-by");
   const newsAPIKey = "apiKey=2043fa143b224d2b8f1057943e2557f7";
   const newsApp = {
@@ -93,9 +98,9 @@ function buildNewsApp() {
         newsApp.populateNewsArticles(
           `${everythingEntryPoint}?q=${keyword}&sortBy=${sortByValue}&${newsAPIKey}`
         );
-        errorMessage.innerHTML = "";
+        everythingErrorMessage.innerHTML = "";
       } else {
-        errorMessage.innerHTML =
+        everythingErrorMessage.innerHTML =
           "Please enter atleast one word to continue the search";
       }
     },
@@ -115,8 +120,14 @@ function buildNewsApp() {
             }`;
       let topHeadlinesEntryPoint = "https://newsapi.org/v2/top-headlines";
       let newsUrl = `${topHeadlinesEntryPoint}?q=${selectedCountry}${selectedCategory}&${newsAPIKey}`;
-      newsArticlesDiv.innerHTML = "";
-      newsApp.populateNewsArticles(newsUrl);
+      if (selectedCountry) {
+        topHeadlinesErrorMessage.innerHTML = "";
+        newsArticlesDiv.innerHTML = "";
+        newsApp.populateNewsArticles(newsUrl);
+      } else {
+        topHeadlinesErrorMessage.innerHTML =
+          "Please select one country to continue the search";
+      }
     }
   };
   newsApp.populateNewsArticles(
