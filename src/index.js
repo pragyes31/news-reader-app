@@ -82,7 +82,7 @@ function buildNewsApp() {
     getEverythingNews: function(e) {
       e.preventDefault();
       let keyword = document.querySelector("#search-by-keyword").value;
-      let everythingEntryPoint = "https://newsapi.org/v2/top-headlines";
+      let everythingEntryPoint = "https://newsapi.org/v2/everything";
       let sortByValue = sortBy.options[sortBy.selectedIndex].value;
       console.log(
         sortByValue,
@@ -120,7 +120,7 @@ function buildNewsApp() {
     }
   };
   newsApp.populateNewsArticles(
-    "https://newsapi.org/v2/everything?q=boeing&sortBy=publishedAt&apiKey=2043fa143b224d2b8f1057943e2557f7 "
+    "https://newsapi.org/v2/everything?q=javascript&apiKey=2043fa143b224d2b8f1057943e2557f7 "
   );
   getEverythingBtn.addEventListener("click", newsApp.getEverythingNews);
   getTopHeadlinesBtn.addEventListener("click", newsApp.getTopHeadlines);

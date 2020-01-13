@@ -33,6 +33,7 @@ body {
   font-family: "Bitter", serif;
   z-index: 2;
   color: rgb(255, 255, 255);
+  font-style: italic;
 }
 
 .period {
@@ -44,7 +45,6 @@ body {
 .news-section {
   margin-top: 60px;
   width: 100%;
-  background-color: rgb(53, 114, 114);
   position: absolute;
 }
 
@@ -110,7 +110,6 @@ body {
   margin-left: 250px;
   width: calc(100vw - 250px);
   height: 100%;
-  background-color: rgb(136, 238, 166);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -118,7 +117,6 @@ body {
 
 .news-article {
   width: 80%;
-  background-color: #c3d1cf;
   margin-top: 20px;
 }
 
@@ -132,7 +130,7 @@ body {
   margin-top: 12px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 720px) {
   .news-section {
     display: flex;
     flex-direction: column;
