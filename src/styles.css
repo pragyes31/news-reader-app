@@ -82,15 +82,19 @@ body {
 
 .get-filtered-news {
   cursor: pointer;
-  width: 100px;
-  height: 30px;
-  transition: height 1s ease;
-  transition: width 1s ease;
+  width: 110px;
+  height: 33px;
+  transition: width 1s ease-out;
+  background-color: #bbe1fa;
+  color: #3282b8;
+  border: none;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .get-filtered-news:hover {
-  width: 110px;
-  height: 33px;
+  width: 125px;
 }
 
 .error-message {
@@ -145,12 +149,13 @@ body {
 .news-article {
   width: 80%;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .news-title {
   font-size: 19px;
   text-decoration: underline;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .news-description {
