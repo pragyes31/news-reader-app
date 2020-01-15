@@ -98,7 +98,7 @@ body {
 }
 
 .error-message {
-  color: rgb(188, 43, 43);
+  color: #bbe1fa;
   font-size: 13px;
   margin-top: 5px;
 }
@@ -162,7 +162,7 @@ body {
   margin-top: 12px;
 }
 
-@media only screen and (max-width: 720px) {
+@media all and (max-width: 720px) {
   .news-section {
     display: flex;
     flex-direction: column;
@@ -193,7 +193,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 420px) {
+@media all and (max-width: 420px) {
   .filters {
     height: 250px;
   }
