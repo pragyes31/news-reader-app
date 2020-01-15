@@ -195,7 +195,11 @@ body {
 
 @media all and (max-width: 420px) {
   .filters {
-    height: 250px;
+    height: 270px;
+  }
+
+  #news-articles {
+    margin-top: 270px;
   }
 
   .news-tabs {
