@@ -158,6 +158,8 @@ function buildNewsApp() {
     category.addEventListener("click", switchTabs);
   });
 }
+
+buildNewsApp();
 // const newsApp = {
 //   createNewsArticleDiv: function(
 //     header,
