@@ -72,9 +72,12 @@ function buildNewsApp() {
         return response.json();
       })
       .then(function(data) {
+        if (data.articles.length < 1) {
+          newsArticlesDiv.innerHTML =
+            "Sorry, couldn't find any articles for this.";
+        }
         data.articles.forEach(article => {
           let jsonDate = article.publishedAt;
-          console.log(jsonDate);
           let fullDate = new Date(jsonDate);
           let date = `${fullDate.getDate()} ${
             monthNames[fullDate.getMonth()]
