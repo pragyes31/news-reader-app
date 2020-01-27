@@ -130,7 +130,8 @@ body {
 
 .date-of-publish {
   color: #888;
-  margin-top: -5px;
+  margin-top: -10px;
+  font-size: 14px;
 }
 
 #filter-fields {
@@ -160,6 +161,10 @@ body {
 
 .news-description {
   margin-top: 12px;
+}
+
+.read-more > a {
+  color: #3490de;
 }
 
 @media all and (max-width: 720px) {
